@@ -7,7 +7,7 @@ include(CTest)
 
 set(CMAKE_Swift_MODULE_DIRECTORY ${CMAKE_BINARY_DIR}/swift)
 
-add_subdirectory(Source)
+add_subdirectory(Sources)
 if(BUILD_TESTING)
   add_subdirectory(Tests)
 endif()
