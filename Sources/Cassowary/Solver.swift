@@ -234,7 +234,7 @@ public class Solver {
   // The current state of the system should be such that the objective function
   // is optimal, but not feasible.  THis method will perform an iteration of the
   // dual simplex method to make the solution both optional and feasible.
-  private func optimize_() throws {
+  private func optimize() throws {
     while infeasible.count > 0 {
       let exiting: Symbol = infeasible.popLast()!
       guard let row: Row = rows[exiting] else {
@@ -533,7 +533,7 @@ public class Solver {
       throw UnknownEditVariable(variable)
     }
 
-    defer { try! optimize_() }
+    defer { try! optimize() }
 
     let delta: Double = value - edit.constant
     edit.constant = value
