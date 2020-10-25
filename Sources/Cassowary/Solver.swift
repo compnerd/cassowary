@@ -529,7 +529,7 @@ public class Solver {
   /// This method should be used after an edit variable has been addd to the
   /// solver in order to suggest the value for that variable.
   public func suggest(value: Double, for variable: Variable) throws {
-    guard var edit: EditInfo = edits[variable] else {
+    guard let edit: EditInfo = edits[variable] else {
       throw UnknownEditVariable(variable)
     }
 
