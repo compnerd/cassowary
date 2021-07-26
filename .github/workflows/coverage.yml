@@ -17,7 +17,7 @@ jobs:
       matrix:
         include:
           - branch: development
-            tag: DEVELOPMENT-SNAPSHOT-2021-05-25-a
+            tag: DEVELOPMENT-SNAPSHOT-2021-07-15-a
 
     steps:
       - name: Install Swift ${{ matrix.tag }}
