@@ -16,7 +16,7 @@ correspond to the `Variable` type in the implementation.  The variables can be
 used to create the expressions which form constraints of the system.  These must
 be added to an instance of the solver.
 
-```Swift
+```swift
 import cassowary
 
 let simplex: Solver = Solver()
@@ -75,7 +75,7 @@ the system.  These variables can have any strength other than `required`.
 Continuing our example, we could make x<sub>m</sub> editable and suggest a value
 of `60` for it.
 
-```Swift
+```swift
 simplex.add(variable: x_m, .strong)
 simplex.suggest(value: 60.0, for: x_m)
 ```
@@ -87,7 +87,7 @@ removed, or when a new value is suggested for an edit variable.  However, the
 variable values are not updated automatically and you must request the solver to
 update the values.
 
-```Swift
+```swift
 simplex.suggest(value: 90, for: x_m)
 simplex.update()
 ```
