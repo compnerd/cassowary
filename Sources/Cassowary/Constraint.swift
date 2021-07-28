@@ -28,7 +28,7 @@ public class Constraint {
   }
 }
 
-extension Constraint : Hashable {
+extension Constraint: Hashable {
   public func hash(into hasher: inout Hasher) {
     hasher.combine(expression)
     hasher.combine(operation)
@@ -36,7 +36,7 @@ extension Constraint : Hashable {
   }
 }
 
-extension Constraint : Equatable {
+extension Constraint: Equatable {
   public static func == (lhs: Constraint, rhs: Constraint) -> Bool {
     return lhs.expression == rhs.expression &&
            lhs.operation == rhs.operation &&
@@ -44,7 +44,7 @@ extension Constraint : Equatable {
   }
 }
 
-extension Constraint : CustomStringConvertible {
+extension Constraint: CustomStringConvertible {
   public var description: String {
     var value: String = expression.terms.reduce("") {
       $0 + "\($1.coefficient) * \($1.variable.name) + "
@@ -59,4 +59,3 @@ extension Constraint : CustomStringConvertible {
     return value
   }
 }
-

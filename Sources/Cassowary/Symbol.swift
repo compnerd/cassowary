@@ -27,7 +27,7 @@ extension Symbol {
   static let invalid: Symbol = Symbol(.invalid, 0)
 }
 
-extension Symbol : Comparable {
+extension Symbol: Comparable {
   public static func == (lhs: Symbol, rhs: Symbol) -> Bool {
     return lhs.id == rhs.id
   }
@@ -37,13 +37,13 @@ extension Symbol : Comparable {
   }
 }
 
-extension Symbol : Hashable {
+extension Symbol: Hashable {
   public func hash(into hasher: inout Hasher) {
     hasher.combine(id)
     hasher.combine(type)
   }
 }
-extension Symbol : CustomStringConvertible {
+extension Symbol: CustomStringConvertible {
   public var description: String {
     switch type {
     case .invalid: return "i\(id)"
@@ -54,4 +54,3 @@ extension Symbol : CustomStringConvertible {
     }
   }
 }
-

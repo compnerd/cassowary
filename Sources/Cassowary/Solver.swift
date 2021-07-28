@@ -576,7 +576,7 @@ public class Solver {
   }
 }
 
-extension Solver : CustomStringConvertible {
+extension Solver: CustomStringConvertible {
   public var description: String {
     return """
 Objective
@@ -607,4 +607,3 @@ Constraints
     }
   }
 }
-
