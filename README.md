@@ -61,8 +61,8 @@ strengths.  Three standard strengths are defined by default:
 We can add a constraint to our previous example to place x<sub>m</sub> at 50 by
 adding a new `weak` constraint:
 
-```Swift
-simplex.add(constraint: (x_m == 50.0) | Strength.weak)
+```swift
+simplex.add(constraint: x_m == 50.0, strength: .weak)
 ```
 
 ### Edit Variables

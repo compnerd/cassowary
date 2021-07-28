@@ -40,8 +40,8 @@ final class CassowaryTests: XCTestCase {
 
     try solver.add(constraint: x <= y)
     try solver.add(constraint: y == x + 3.0)
-    try solver.add(constraint: x == 10.0, .weak)
-    try solver.add(constraint: y == 10.0, .weak)
+    try solver.add(constraint: x == 10.0, strength: .weak)
+    try solver.add(constraint: y == 10.0, strength: .weak)
 
     solver.update()
 
@@ -59,7 +59,7 @@ final class CassowaryTests: XCTestCase {
 
     let x: Variable = Variable("x")
 
-    try solver.add(constraint: x <= 100.0, .weak)
+    try solver.add(constraint: x <= 100.0, strength: .weak)
 
     solver.update()
 
@@ -94,8 +94,8 @@ final class CassowaryTests: XCTestCase {
     let x: Variable = Variable("x")
     let y: Variable = Variable("y")
 
-    try solver.add(constraint: x == 100, .weak)
-    try solver.add(constraint: y == 120, .strong)
+    try solver.add(constraint: x == 100, strength: .weak)
+    try solver.add(constraint: y == 120, strength: .strong)
 
     let c10: Constraint = x <= 10.0
     let c20: Constraint = x <= 20.0
@@ -162,7 +162,7 @@ final class CassowaryTests: XCTestCase {
 
     try solver.add(constraint: v + w == 0.0)
     try solver.add(constraint: v == 10.0)
-    try solver.add(constraint: w >= 0.0, .weak)
+    try solver.add(constraint: w >= 0.0, strength: .weak)
 
     solver.update()
 
@@ -177,8 +177,8 @@ final class CassowaryTests: XCTestCase {
     let w: Variable = Variable("w")
 
     try solver.add(constraint: v + w == 0.0)
-    try solver.add(constraint: v >= 10.0, .medium)
-    try solver.add(constraint: w == 2.0, .strong)
+    try solver.add(constraint: v >= 10.0, strength: .medium)
+    try solver.add(constraint: w == 2.0, strength: .strong)
 
     solver.update()
 

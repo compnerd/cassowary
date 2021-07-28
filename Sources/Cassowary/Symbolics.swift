@@ -376,10 +376,12 @@ public func >= (_ lhs: Double, _ rhs: Variable) -> Constraint {
 
 // MARK - constraint strength modifiers
 
+@available(*, deprecated, message: "explicitly pass strength when adding the constraint")
 public func | (_ lhs: Constraint, _ rhs: Strength) -> Constraint {
   return Constraint(lhs, rhs)
 }
 
+@available(*, deprecated, message: "explicitly pass strength when adding the constraint")
 public func | (_ lhs: Strength, _ rhs: Constraint) -> Constraint {
   return Constraint(rhs, lhs)
 }
