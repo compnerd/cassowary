@@ -11,15 +11,14 @@ public class Variable {
   }
 }
 
-extension Variable : Hashable {
+extension Variable: Hashable {
   public func hash(into hasher: inout Hasher) {
     hasher.combine(name)
   }
 }
 
-extension Variable : Equatable {
+extension Variable: Equatable {
   public static func == (lhs: Variable, rhs: Variable) -> Bool {
     return lhs.name == rhs.name && lhs.value == rhs.value
   }
 }
-

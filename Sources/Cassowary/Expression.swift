@@ -24,14 +24,14 @@ public struct Expression {
   }
 }
 
-extension Expression : Hashable {
+extension Expression: Hashable {
   public func hash(into hasher: inout Hasher) {
     hasher.combine(terms)
     hasher.combine(constant)
   }
 }
 
-extension Expression : Equatable {
+extension Expression: Equatable {
   public static func == (lhs: Expression, rhs: Expression) -> Bool {
     return lhs.terms == rhs.terms && lhs.constant == rhs.constant
   }
@@ -44,4 +44,3 @@ internal func reduce(_ expression: Expression) -> Expression {
   }
   return Expression(vars.map { Term($0, $1) }, expression.constant)
 }
-
