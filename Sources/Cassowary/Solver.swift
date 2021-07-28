@@ -444,8 +444,13 @@ public class Solver {
     try optimize(objective: objective)
   }
 
+  @available(*, deprecated, message: "renamed add(constraint:strength:)")
   public func add(constraint: Constraint, _ strength: Strength) throws {
-    try add(constraint: constraint | strength)
+    try add(constraint: constraint, strength: strength)
+  }
+
+  public func add(constraint: Constraint, strength: Strength) throws {
+    try add(constraint: Constraint(constraint, strength))
   }
 
   /// Remove a constraint from the solver
