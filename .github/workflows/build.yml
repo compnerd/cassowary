@@ -13,8 +13,8 @@ jobs:
     strategy:
       matrix:
         include:
-          - branch: swift-5.4.2-release
-            tag: 5.4.2-RELEASE
+          - branch: swift-5.4.3-release
+            tag: 5.4.3-RELEASE
             options: '-Xmanifest -use-ld=link -Xswiftc -use-ld=link'
 
           - branch: swift-5.5-branch
