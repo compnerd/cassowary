@@ -17,8 +17,8 @@ jobs:
             tag: 5.4.3-RELEASE
             options: '-Xmanifest -use-ld=link -Xswiftc -use-ld=link'
 
-          - branch: swift-5.5-branch
-            tag: 5.5-DEVELOPMENT-SNAPSHOT-2021-07-19-a
+          - branch: swift-5.5.3-release
+            tag: 5.5.3-RELEASE
             options: '-Xmanifest -use-ld=link -Xswiftc -use-ld=link'
 
           - branch: development
