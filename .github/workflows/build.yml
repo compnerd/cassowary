@@ -11,6 +11,7 @@ jobs:
     runs-on: windows-latest
 
     strategy:
+      fail-fast: false
       matrix:
         include:
           - branch: swift-5.4.3-release
