@@ -1,6 +1,9 @@
 // Copyright © 2019 Saleem Abdulrasool <compnerd@compnerd.org>.
 // SPDX-License-Identifier: BSD-3-Clause
 
+@_implementationOnly
+import OrderedCollections
+
 public struct Expression {
   public let terms: [Term]
   public let constant: Double
@@ -38,7 +41,7 @@ extension Expression: Equatable {
 }
 
 internal func reduce(_ expression: Expression) -> Expression {
-  var vars: [Variable:Double] = [:]
+  var vars: OrderedDictionary<Variable, Double> = [:]
   for term in expression.terms {
     vars[term.variable] = vars[term.variable, default: 0.0] + term.coefficient
   }

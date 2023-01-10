@@ -218,4 +218,25 @@ final class CassowaryTests: XCTestCase {
     XCTAssertEqual(x_l.value, 80)
     XCTAssertEqual(x_r.value, 100)
   }
+
+  // Terms must be evaluated in insertion order
+  func testMultiTermExpressionOrder() throws {
+    let solver: Solver = Solver()
+
+    let c: Variable = Variable("c")
+    let a: Variable = Variable("a")
+    let b: Variable = Variable("b")
+
+    try solver.add(variable: c, strength: .strong)
+    try solver.add(constraint: a >= 0, .strong)
+    try solver.add(constraint: b >= a, .strong)
+    try solver.add(constraint: b - a == c, .required)
+    try solver.suggest(value: 100, for: c)
+
+    solver.update()
+
+    XCTAssertEqual(a.value, 0)
+    XCTAssertEqual(b.value, 100)
+    XCTAssertEqual(c.value, 100)
+  }
 }
