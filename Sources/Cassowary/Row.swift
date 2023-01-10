@@ -1,8 +1,12 @@
 // Copyright © 2019 Saleem Abdulrasool <compnerd@compnerd.org>.
 // SPDX-License-Identifier: BSD-3-Clause
 
+@_implementationOnly
+import OrderedCollections
+
 internal class Row {
-  public private(set) var cells: [Symbol:Double] = [:]
+  // Must be in insertion order
+  public private(set) var cells: OrderedDictionary<Symbol, Double> = [:]
   public private(set) var constant: Double
 
   public init() {
