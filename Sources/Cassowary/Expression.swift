@@ -4,8 +4,12 @@
 @_implementationOnly
 import OrderedCollections
 
+/// An expression is a linear combination of terms and a constant.
 public struct Expression {
+  /// The terms of the expression.
   public let terms: [Term]
+
+  /// The constant of the expression.
   public let constant: Double
 
   public var value: Double {
@@ -27,12 +31,16 @@ public struct Expression {
   }
 }
 
+// MARK: - Hashable
+
 extension Expression: Hashable {
   public func hash(into hasher: inout Hasher) {
     hasher.combine(terms)
     hasher.combine(constant)
   }
 }
+
+// MARK: - Equatable
 
 extension Expression: Equatable {
   public static func == (lhs: Expression, rhs: Expression) -> Bool {

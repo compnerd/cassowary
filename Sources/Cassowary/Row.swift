@@ -120,6 +120,8 @@ internal class Row {
   }
 }
 
+// MARK: - CustomStringConvertible
+
 extension Row: CustomStringConvertible {
   public var description: String {
     return cells.reduce("\(constant)") {

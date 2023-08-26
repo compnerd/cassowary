@@ -576,6 +576,8 @@ public class Solver {
   }
 }
 
+// MARK: - CustomStringConvertible
+
 extension Solver: CustomStringConvertible {
   public var description: String {
     return """
