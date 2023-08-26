@@ -11,11 +11,15 @@ public class Variable {
   }
 }
 
+// MARK: - Hashable
+
 extension Variable: Hashable {
   public func hash(into hasher: inout Hasher) {
     hasher.combine(name)
   }
 }
+
+// MARK: - Equatable
 
 extension Variable: Equatable {
   public static func == (lhs: Variable, rhs: Variable) -> Bool {

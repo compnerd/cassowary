@@ -9,9 +9,15 @@ public extension Constraint {
   }
 }
 
+/// Describes a constraint over variables in the system.
 public class Constraint {
+  /// The expression that is constrained.
   public let expression: Expression
+
+  /// The relationship between the expression and the constant.
   public let operation: Constraint.Relationship
+
+  /// The strength of the constraint.
   public let strength: Strength
 
   public init(_ expression: Expression, _ operation: Constraint.Relationship,
@@ -28,6 +34,8 @@ public class Constraint {
   }
 }
 
+// MARK: - Hashable
+
 extension Constraint: Hashable {
   public func hash(into hasher: inout Hasher) {
     hasher.combine(expression)
@@ -36,6 +44,8 @@ extension Constraint: Hashable {
   }
 }
 
+// MARK: - Equatable
+
 extension Constraint: Equatable {
   public static func == (lhs: Constraint, rhs: Constraint) -> Bool {
     return lhs.expression == rhs.expression &&
@@ -43,6 +53,8 @@ extension Constraint: Equatable {
            lhs.strength == rhs.strength
   }
 }
+
+// MARK: - CustomStringConvertible
 
 extension Constraint: CustomStringConvertible {
   public var description: String {

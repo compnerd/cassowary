@@ -37,12 +37,17 @@ extension Symbol: Comparable {
   }
 }
 
+// MARK: - Hashable
+
 extension Symbol: Hashable {
   public func hash(into hasher: inout Hasher) {
     hasher.combine(id)
     hasher.combine(type)
   }
 }
+
+// MARK: - CustomStringConvertible
+
 extension Symbol: CustomStringConvertible {
   public var description: String {
     switch type {

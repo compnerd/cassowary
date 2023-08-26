@@ -15,12 +15,16 @@ public class Term {
   }
 }
 
+// MARK: - Hashable
+
 extension Term: Hashable {
   public func hash(into hasher: inout Hasher) {
     hasher.combine(variable)
     hasher.combine(coefficient)
   }
 }
+
+// MARK: - Equatable
 
 extension Term: Equatable {
   public static func == (lhs: Term, rhs: Term) -> Bool {

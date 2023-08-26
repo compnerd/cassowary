@@ -1,15 +1,16 @@
 // Copyright © 2019 Saleem Abdulrasool <compnerd@compnerd.org>.
 // SPDX-License-Identifier: BSD-3-Clause
 
-// MARK - epsilon check
+// MARK: - epsilon check
 
 infix operator ~=
+
 public func ~= (_ lhs: Double, _ rhs: Double) -> Bool {
   let epsilon: Double = 1.0e-8
   return abs(lhs - rhs) <= epsilon
 }
 
-// MARK - expression operations
+// MARK: - expression operations
 
 public prefix func - (_ expression: Expression) -> Expression {
   return expression * -1.0
@@ -56,7 +57,7 @@ public func / (_ expression: Expression, _ denominator: Double) -> Expression {
   return expression * (1.0 / denominator)
 }
 
-// MARK - term operations
+// MARK: - term operations
 
 public prefix func - (_ term: Term) -> Term {
   return term * -1.0
@@ -102,7 +103,7 @@ public func / (_ term: Term, _ denominator: Double) -> Term {
   return term * (1.0 / denominator)
 }
 
-// MARK - variable operations
+// MARK: - variable operations
 
 public prefix func - (_ variable: Variable) -> Term {
   return variable * -1.0
@@ -148,7 +149,7 @@ public func / (_ variable: Variable, _ denominator: Double) -> Term {
   return variable * (1.0 / denominator)
 }
 
-// MARK - double operations
+// MARK: - double operations
 
 public func + (_ lhs: Double, _ rhs: Expression) -> Expression {
   return rhs + lhs
@@ -186,7 +187,7 @@ public func * (_ coefficient: Double, _ variable: Variable) -> Term {
   return variable * coefficient
 }
 
-// MARK - expression constraints
+// MARK: - expression constraints
 
 public func == (_ lhs: Expression, _ rhs: Expression) -> Constraint {
   return Constraint(lhs - rhs, .eq)
@@ -236,7 +237,7 @@ public func >= (_ lhs: Expression, _ rhs: Double) -> Constraint {
   return lhs >= Expression(rhs)
 }
 
-// MARK - term constraints
+// MARK: - term constraints
 
 public func == (_ lhs: Term, _ rhs: Expression) -> Constraint {
   return rhs == lhs
@@ -286,7 +287,7 @@ public func >= (_ lhs: Term, _ rhs: Double) -> Constraint {
   return Expression(lhs) >= rhs
 }
 
-// MARK - Variable constraints
+// MARK: - Variable constraints
 
 public func == (_ lhs: Variable, _ rhs: Expression) -> Constraint {
   return rhs == lhs
@@ -336,7 +337,7 @@ public func >= (_ lhs: Variable, _ rhs: Double) -> Constraint {
   return Term(lhs) >= rhs
 }
 
-// MARK - double constraints
+// MARK: - double constraints
 
 public func == (_ lhs: Double, _ rhs: Expression) -> Constraint {
   return rhs == lhs
@@ -374,7 +375,7 @@ public func >= (_ lhs: Double, _ rhs: Variable) -> Constraint {
   return rhs <= lhs
 }
 
-// MARK - constraint strength modifiers
+// MARK: - constraint strength modifiers
 
 @available(*, deprecated, message: "explicitly pass strength when adding the constraint")
 public func | (_ lhs: Constraint, _ rhs: Strength) -> Constraint {
