@@ -16,15 +16,15 @@ jobs:
         include:
           - branch: swift-5.4.3-release
             tag: 5.4.3-RELEASE
-            options: '-Xmanifest -use-ld=link -Xswiftc -use-ld=link'
+            options: ''
 
           - branch: swift-5.5.3-release
             tag: 5.5.3-RELEASE
-            options: '-Xmanifest -use-ld=link -Xswiftc -use-ld=link'
+            options: ''
 
           - branch: development
             tag: DEVELOPMENT-SNAPSHOT-2021-07-24-a
-            options: '-Xmanifest -use-ld=link -Xswiftc -use-ld=link'
+            options: ''
 
     steps:
       - uses: compnerd/gha-setup-swift@main
