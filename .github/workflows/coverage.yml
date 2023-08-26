@@ -17,8 +17,8 @@ jobs:
       matrix:
         include:
           - branch: development
-            tag: DEVELOPMENT-SNAPSHOT-2021-07-15-a
-            options: '-Xmanifest -use-ld=link -Xswiftc -use-ld=link'
+            tag: DEVELOPMENT-SNAPSHOT-2023-08-12-a
+            options: ''
 
     steps:
       - uses: seanmiddleditch/gha-setup-vsdevenv@master
