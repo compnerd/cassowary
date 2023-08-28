@@ -5,7 +5,7 @@ import PackageDescription
 let cassowary = Package(
   name: "cassowary",
   products: [
-    .library(name: "cassowary", type: .dynamic, targets: ["Cassowary"]),
+    .library(name: "cassowary", targets: ["Cassowary"]),
   ],
   dependencies: [
     .package(url: "https://github.com/apple/swift-collections.git",
