@@ -3,7 +3,7 @@
 
 private typealias Tag = (marker: Symbol, other: Symbol)
 
-private class EditInfo {
+private final class EditInfo {
   public var tag: Tag
   public var constraint: Constraint
   public var constant: Double
@@ -15,7 +15,7 @@ private class EditInfo {
   }
 }
 
-public class Solver {
+public final class Solver {
   private var rows: [Symbol:Row] = [:]
   private var constraints: [Constraint:Tag] = [:]
   private var variables: [Variable:Symbol] = [:]

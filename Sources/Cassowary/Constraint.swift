@@ -10,7 +10,7 @@ public extension Constraint {
 }
 
 /// Describes a constraint over variables in the system.
-public class Constraint {
+public final class Constraint {
   /// The expression that is constrained.
   public let expression: Expression
 

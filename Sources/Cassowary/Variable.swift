@@ -1,7 +1,7 @@
 // Copyright © 2019 Saleem Abdulrasool <compnerd@compnerd.org>.
 // SPDX-License-Identifier: BSD-3-Clause
 
-public class Variable {
+public final class Variable {
   public var name: String
   public var value: Double
 
