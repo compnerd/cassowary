@@ -38,6 +38,6 @@ jobs:
         run: |
           llvm-cov export -format lcov -ignore-filename-regex ".build|Tests" -instr-profile .build\x86_64-unknown-windows-msvc\debug\codecov\default.profdata .build\x86_64-unknown-windows-msvc\debug\CassowaryPackageTests.xctest > coverage.lcov
 
-      - uses: codecov/codecov-action@v1.5.0
+      - uses: codecov/codecov-action@v3
         with:
           files: coverage.lcov
