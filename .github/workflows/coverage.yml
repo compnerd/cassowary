@@ -21,7 +21,6 @@ jobs:
             options: ''
 
     steps:
-      - uses: seanmiddleditch/gha-setup-vsdevenv@master
       - uses: compnerd/gha-setup-swift@main
         with:
           tag: ${{ matrix.tag }}
