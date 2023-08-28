@@ -4,7 +4,7 @@
 @_implementationOnly
 import OrderedCollections
 
-internal class Row {
+internal final class Row {
   // Must be in insertion order
   public private(set) var cells: OrderedDictionary<Symbol, Double> = [:]
   public private(set) var constant: Double
