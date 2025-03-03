@@ -23,7 +23,7 @@ jobs:
             options: '-Xmanifest -use-ld=link -Xswiftc -use-ld=link'
 
           - branch: development
-            tag: DEVELOPMENT-SNAPSHOT-2023-08-12-a
+            tag: DEVELOPMENT-SNAPSHOT-2025-02-27-a
             options: ''
 
     steps:
