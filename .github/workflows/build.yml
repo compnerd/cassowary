@@ -14,16 +14,8 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - branch: swift-5.4.3-release
-            tag: 5.4.3-RELEASE
-            options: '-Xmanifest -use-ld=link -Xswiftc -use-ld=link'
-
-          - branch: swift-5.5.3-release
-            tag: 5.5.3-RELEASE
-            options: '-Xmanifest -use-ld=link -Xswiftc -use-ld=link'
-
           - branch: development
-            tag: DEVELOPMENT-SNAPSHOT-2023-08-12-a
+            tag: DEVELOPMENT-SNAPSHOT-2025-02-27-a
             options: ''
 
     steps:
