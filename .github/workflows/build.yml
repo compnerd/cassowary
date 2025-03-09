@@ -15,7 +15,7 @@ jobs:
       matrix:
         include:
           - branch: development
-            tag: DEVELOPMENT-SNAPSHOT-2025-02-27-a
+            tag: DEVELOPMENT-SNAPSHOT-2025-02-24-a
             options: ''
 
     steps:
