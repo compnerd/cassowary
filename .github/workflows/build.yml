@@ -35,4 +35,4 @@ jobs:
         run: swift build -Xbuild-tools-swiftc -windows-sdk-root -Xbuild-tools-swiftc "${env:WindowsSdkDir}" -Xbuild-tools-swiftc -windows-sdk-version -Xbuild-tools-swiftc ${env:UCRTVersion} ${{ matrix.options }}
 
       - name: Test
-        run: swift test -Xbuild-tools-swiftc -Xfrontend -Xbuild-tools-swiftc -dump-clang-diagnostics -Xbuild-tools-swiftc -windows-sdk-root -Xbuild-tools-swiftc "${env:WindowsSdkDir}" -Xbuild-tools-swiftc -windows-sdk-version -Xbuild-tools-swiftc ${env:UCRTVersion} ${{ matrix.options }}
+        run: swift test -Xbuild-tools-swiftc -Xfrontend -Xbuild-tools-swiftc -dump-clang-diagnostics -Xbuild-tools-swiftc -windows-sdk-root -Xbuild-tools-swiftc "${env:WindowsSdkDir}" -Xbuild-tools-swiftc -windows-sdk-version -Xbuild-tools-swiftc ${env:UCRTVersion} -Xswiftc -windows-sdk-root -Xswiftc "${env:WindowsSdkDir}" -Xswiftc -windows-sdk-version -Xswiftc ${env:UCRTVersion} ${{ matrix.options }}
