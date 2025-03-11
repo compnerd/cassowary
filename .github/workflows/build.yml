@@ -32,7 +32,7 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: Build
-        run: swift build ${{ matrix.options }} -Xbuild-tools-swiftc -windows-sdk-version -Xbuild-tools-swiftc $env:UCRTVersion -Xbuild-tools-swiftc -Xfrontend -Xbuild-tools-swiftc -dump-clang-diagnostics
+        run: swift build ${{ matrix.options }} -Xbuild-tools-swiftc -windows-sdk-root -Xbuild-tools-swiftc "${env:WindowsSdkDir}" -Xbuild-tools-swiftc -windows-sdk-version -Xbuild-tools-swiftc $env:UCRTVersion -Xbuild-tools-swiftc -Xfrontend -Xbuild-tools-swiftc -dump-clang-diagnostics
 
       - name: Test
         run: swift test ${{ matrix.options }}
