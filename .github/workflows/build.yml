@@ -21,7 +21,7 @@ jobs:
     steps:
       - uses: compnerd/gha-setup-vsdevenv@main
         with:
-          components: Microsoft.VisualStudio.ComponentGroup.VC.Tools.142.x86.x64
+          components: Microsoft.VisualStudio.Component.VC.14.42.17.12.x86.x64
           toolset_version: 14.42
           winsdk: 10.0.22621.0
 
